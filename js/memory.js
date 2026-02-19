@@ -199,26 +199,26 @@
     this.numMoves = 0;
 
     this.gameMetaHTML = '<div class="mg__meta--left">\
-      <span class="mg__meta--level">Level: \
+      <span class="mg__meta--level">' + t('level') + ' \
       <span id="mg__meta--level">' + this.chosenLevel + '</span>\
       </span>\
-      <span class="mg__meta--moves">Moves: \
+      <span class="mg__meta--moves">' + t('moves') + ' \
       <span id="mg__meta--moves">' + this.numMoves + '</span>\
       </span>\
       </div>\
       <div class="mg__meta--right">\
-      <button id="mg__button--restart" class="mg__button">Start Over</button>\
+      <button id="mg__button--restart" class="mg__button">' + t('startOver') + '</button>\
       </div>';
     this.gameMeta.innerHTML = this.gameMetaHTML;
     this.game.appendChild(this.gameMeta);
 
-    this.gameStartScreenHTML = '<h2 class="mg__start-screen--heading">Welcome to the Memory Game!</h2>\
-      <p class="mg__start-screen--text">Flip the tiles and try to match them up in pairs. Pair up all the tiles to win. Try to complete the game in as few moves as possible!</p>\
-      <h3 class="mg__start-screen--sub-heading">Select Level</h3>\
+    this.gameStartScreenHTML = '<h2 class="mg__start-screen--heading">' + t('welcome') + '</h2>\
+      <p class="mg__start-screen--text">' + t('instructions') + '</p>\
+      <h3 class="mg__start-screen--sub-heading">' + t('selectLevel') + '</h3>\
       <ul class="mg__start-screen--level-select">\
-      <li><span data-level="1">Level 1 - Easy (4 x 2)</span></li>\
-      <li><span data-level="2">Level 2 - Medium (6 x 3)</span></li>\
-      <li><span data-level="3">Level 3 - Hard (8 x 4)</span></li>\
+      <li><span data-level="1">' + t('level1') + '</span></li>\
+      <li><span data-level="2">' + t('level2') + '</span></li>\
+      <li><span data-level="3">' + t('level3') + '</span></li>\
       </ul>';
     this.gameStartScreen.innerHTML = this.gameStartScreenHTML;
     this.game.appendChild(this.gameStartScreen);
@@ -488,9 +488,9 @@
     var self = this;
     if (this.options.onGameEnd() === false) {
       this._clearGame();
-      this.gameMessages.innerHTML = '<h2 class="mg__onend--heading">Sweet!</h2>\
-        <p class="mg__onend--message">You won the round in ' + this.numMoves + ' moves. Go you.</p>\
-        <button id="mg__onend--restart" class="mg__button">Play again?</button>';
+      this.gameMessages.innerHTML = '<h2 class="mg__onend--heading">' + t('winTitle') + '</h2>\
+        <p class="mg__onend--message">' + tFormat('winMessage', {moves: this.numMoves}) + '</p>\
+        <button id="mg__onend--restart" class="mg__button">' + t('playAgain') + '</button>';
       this.game.appendChild(this.gameMessages);
       document.getElementById("mg__onend--restart").addEventListener( "click", function(e) {
         self.resetGame();
