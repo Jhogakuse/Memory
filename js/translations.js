@@ -21,12 +21,12 @@ const translations = {
     winMessage: "You won the round in {moves} moves. Go you."
   },
   es: {
-    memoryGame: "¡Juego de Memoria!",
+    memoryGame: "¡Memorama!",
     level: "Nivel:",
     moves: "Movimientos:",
     startOver: "Empezar de Nuevo",
     playAgain: "¿Jugar de nuevo?",
-    welcome: "¡Bienvenido al Juego de Memoria!",
+    welcome: "¡Bienvenido al Memorama de Jesús!",
     instructions: "Voltea las fichas e intenta emparejarlas. Empareja todas las fichas para ganar. ¡Intenta completar el juego en la menor cantidad de movimientos posible!",
     selectLevel: "Selecciona Nivel",
     level1: "Nivel 1 - Fácil (4 x 2)",
